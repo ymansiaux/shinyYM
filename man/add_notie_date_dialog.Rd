@@ -29,6 +29,11 @@ une alerte notie
 \description{
 Implemente la fonction date de la librairie JS notie
 }
+\details{
+https://github.com/jaredreich/notie
+
+https://codingshiksha.com/javascript/notie-js-javascript-alert-toast-notification-library-full-tutorial-with-examples/
+}
 \examples{
 \dontrun{library(shiny)
 library(shinyYM)
@@ -36,26 +41,25 @@ library(shinyYM)
 ui <- fluidPage(
   add_notie_deps(),
   actionButton(inputId = "b1", "confirm"),
-  verbatimTextOutput("notie_confirm_answer")
+  verbatimTextOutput("date")
 )
 
 server <- function(input, output, session) {
 
   observeEvent(input$b1, {
-    add_notie_confirm(inputId = "notie_confirm_answer",
-                      text = "Confirmation",
-                      submitText = "Valider",
-                      cancelText = "Annuler",
-                      position = "top",
-                      session)
+
+    add_notie_date_dialog(inputId = "date",
+                          submitText = "Valider",
+                          cancelText = "Annuler",
+                          position = "top",
+                          session)
   })
 
-  output$notie_confirm_answer <- renderPrint(input$notie_confirm_answer)
+  output$date <- renderPrint(input$date)
 
 }
 
 # Run the application
 shinyApp(ui = ui, server = server)
-
 }
 }

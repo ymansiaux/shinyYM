@@ -32,6 +32,11 @@ une alerte notie
 \description{
 Implemente la fonction alert de la librairie JS notie
 }
+\details{
+https://github.com/jaredreich/notie
+
+https://codingshiksha.com/javascript/notie-js-javascript-alert-toast-notification-library-full-tutorial-with-examples/
+}
 \examples{
 \dontrun{library(shiny)
 library(shinyYM)
