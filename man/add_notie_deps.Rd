@@ -6,9 +6,6 @@
 \usage{
 add_notie_deps()
 }
-\arguments{
-\item{tag}{Element to attach the dependencies.}
-}
 \description{
 This function attaches notie. dependencies to the given tag
 }

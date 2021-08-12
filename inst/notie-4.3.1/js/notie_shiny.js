@@ -1,10 +1,7 @@
-Shiny.addCustomMessageHandler("alertenotie",
-                              function(message) {
-                                console.log(message);
-                                notie.alert(message);
-
-
-                              });
+// Gestion de la fonction alert de notie
+Shiny.addCustomMessageHandler("alertenotie",  function(message) {
+        notie.alert(message);
+});
 
 
 
