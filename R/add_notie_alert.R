@@ -9,6 +9,8 @@
 #'
 #' @return une alerte notie
 #' @export
+#' @details https://github.com/jaredreich/notie
+#' @details https://codingshiksha.com/javascript/notie-js-javascript-alert-toast-notification-library-full-tutorial-with-examples/
 #'
 #' @importFrom assertthat assert_that
 #'

@@ -1,16 +1,15 @@
-#' Implemente la fonction alert de la librairie JS notie
+#' Implemente la fonction date de la librairie JS notie
 #'
 #' @param inputId id qui va contenir la reponse de l'appel à la notif (TRUE/FALSE)
-#' @param text texte affiche dans l'alerte
 #' @param submitText texte de la case de validation de la notif
 #' @param cancelText texte de la case de refus de la notif
 #' @param position position de la notif : string ('top', 'bottom')
 #' @param session argument session shiny
 #'
 #' @return une alerte notie
-#' @export
 #' @details https://github.com/jaredreich/notie
 #' @details https://codingshiksha.com/javascript/notie-js-javascript-alert-toast-notification-library-full-tutorial-with-examples/
+#' @export
 #'
 #' @importFrom assertthat assert_that
 #'
@@ -20,42 +19,40 @@
 #' ui <- fluidPage(
 #'   add_notie_deps(),
 #'   actionButton(inputId = "b1", "confirm"),
-#'   verbatimTextOutput("notie_confirm_answer")
+#'   verbatimTextOutput("date")
 #' )
 #'
 #' server <- function(input, output, session) {
 #'
 #'   observeEvent(input$b1, {
-#'     add_notie_confirm(inputId = "notie_confirm_answer",
-#'                       text = "Confirmation",
-#'                       submitText = "Valider",
-#'                       cancelText = "Annuler",
-#'                       position = "top",
-#'                       session)
+#'
+#'     add_notie_date_dialog(inputId = "date",
+#'                           submitText = "Valider",
+#'                           cancelText = "Annuler",
+#'                           position = "top",
+#'                           session)
 #'   })
 #'
-#'   output$notie_confirm_answer <- renderPrint(input$notie_confirm_answer)
+#'   output$date <- renderPrint(input$date)
 #'
 #' }
 #'
 #' # Run the application
 #' shinyApp(ui = ui, server = server)
-#'
 #' }
 
-add_notie_confirm <- function(inputId = "confirm",
-                              text = "Confirmation",
-                              submitText = "Valider",
-                              cancelText = "Annuler",
-                              position = "top",
-                              session) {
+add_notie_date_dialog <- function(inputId = "date",
+                                  submitText = "Valider",
+                                  cancelText = "Annuler",
+                                  position = "top",
+                                  session) {
 
   assert_that(position %in% c("top", "bottom"))
 
   session$sendCustomMessage(
-    type = "confirmNotie",
+    type = "dateNotie",
     message = list(inputId = inputId,
-                   notie_params = list(text = text, submitText = submitText,
+                   notie_params = list(submitText = submitText,
                                        cancelText = cancelText, position = position)
     )
   )
