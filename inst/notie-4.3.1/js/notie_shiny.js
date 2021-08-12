@@ -18,4 +18,17 @@ Shiny.addCustomMessageHandler("confirmNotie", function(message) {
 });
 
 
+// Gestion de la fonction date de notie
+Shiny.addCustomMessageHandler("dateNotie", function(message) {
+
+        message.notie_params.submitCallback = function(date) {
+              Shiny.setInputValue(message.inputId, date);
+        };
+
+       message.notie_params.cancelCallback = function(date) {
+              Shiny.setInputValue(message.inputId, null);
+        };
+
+      notie.date(message.notie_params);
+});
 
