@@ -66,7 +66,7 @@ add_notie_alert <- function(type = "success", text = "", stay = FALSE,
   assert_that(position %in% c("top", "bottom"))
 
   session$sendCustomMessage(
-    type = "alertenotie",
+    type = "alertNotie",
     message = list(type = type, text = text, stay = stay,
                    time = time, position = position)
   )

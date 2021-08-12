@@ -1,28 +1,21 @@
 // Gestion de la fonction alert de notie
-Shiny.addCustomMessageHandler("alertenotie",  function(message) {
+Shiny.addCustomMessageHandler("alertNotie",  function(message) {
         notie.alert(message);
 });
 
+// Gestion de la fonction confirm de notie
+Shiny.addCustomMessageHandler("confirmNotie", function(message) {
 
+        message.notie_params.submitCallback = function() {
+              Shiny.setInputValue(message.inputId, true);
+        };
 
-Shiny.addCustomMessageHandler("confirmnotie",
-                              function(message) {
+       message.notie_params.cancelCallback = function() {
+              Shiny.setInputValue(message.inputId, false);
+        };
 
-                                console.log(message);
-
-                                message.config.submitCallback = function() {
-                                  Shiny.setInputValue(data.id, true);
-                                };
-
-                                 message.config.cancelCallback = function() {
-                                  Shiny.setInputValue(data.id, false);
-                                };
-
-                                notie.confirm(message.config
-                                );
-
-
-                              });
+      notie.confirm(message.notie_params);
+});
 
 
 

@@ -2,6 +2,7 @@
 
 export(add_dependencies)
 export(add_notie_alert)
+export(add_notie_confirm)
 export(add_notie_deps)
 export(findAttribute)
 export(tagAssert)
