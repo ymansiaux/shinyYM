@@ -32,3 +32,18 @@ Shiny.addCustomMessageHandler("dateNotie", function(message) {
       notie.date(message.notie_params);
 });
 
+
+// Gestion de la fonction input de notie
+Shiny.addCustomMessageHandler("inputNotie", function(message) {
+
+        message.notie_params.submitCallback = function(value) {
+              Shiny.setInputValue(message.inputId, value);
+        };
+
+       message.notie_params.cancelCallback = function(value) {
+              Shiny.setInputValue(message.inputId, null);
+        };
+
+      notie.input(message.notie_params);
+});
+
