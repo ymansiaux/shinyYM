@@ -8,3 +8,7 @@ devtools::check()
 # create_dependency(name = "notie",
 #                   tag = "4.3.1",
 #                   options = charpente_options(local = TRUE))
+
+ # create_dependency(name = "rater-jquery",
+ #                   tag = "1.0.0",
+ #                   options = charpente_options(local = TRUE))
