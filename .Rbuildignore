@@ -9,3 +9,4 @@
 ^package-lock\.json$
 ^dev_history\.R$
 ^dev$
+^deploy_to_RSPM\.R$
