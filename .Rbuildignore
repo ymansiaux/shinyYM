@@ -1,3 +1,5 @@
+^renv$
+^renv\.lock$
 ^shinyYM\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
