@@ -2,7 +2,15 @@ usethis::use_build_ignore("dev_history.R")
 usethis::use_build_ignore("dev/")
 usethis::use_package("assertthat")
 
+attachment::att_amend_desc()
+
 devtools::check()
+devtools::build()
+
+renv::init()
+renv::status()
+renv::snapshot()
+
 # library(charpente)
 #
 # create_dependency(name = "notie",
